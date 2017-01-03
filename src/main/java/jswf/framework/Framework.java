@@ -6,7 +6,7 @@ import jswf.framework.exceptions.RunnerNotProvidedException;
 import java.util.HashMap;
 
 /**
- * Framework
+ * Framework class
  */
 public class Framework {
 
@@ -67,15 +67,15 @@ public class Framework {
      *
      * @return Returns an instance of ComponentInterface.
      */
-    public AbstractComponent getComponentPipeLine() {
+    public AbstractComponent getComponentsPipeline() {
         return firstComponent;
     }
 
     /**
-     * Add a service to the framework to be used by latter on by the components.
+     * Adds a service to the services list to be used latter from the components.
      *
      * @param id Id of the service
-     * @param service Service instance
+     * @param service Service object
      * @return this
      */
     public Framework addService(String id, Object service) {
@@ -85,7 +85,7 @@ public class Framework {
     }
 
     /**
-     * Returns a service by the id or null it it does not exist.
+     * Returns a service by the id or null if it does not exist.
      *
      * @param id Service id to look for
      * @return The service object
@@ -94,10 +94,22 @@ public class Framework {
         return services.get(id);
     }
 
+    /**
+     * The services list
+     *
+     * @return The services list
+     */
     public HashMap<String, Object> getServices() {
         return services;
     }
 
+    /**
+     * Invokes the run method of the set runner.
+     * jswf.framework.exceptions.RunnerNotProvidedException exception is throw if a runner has not been set.
+     * jswf.framework.exceptions.FirstComponentNotProvidedException is throw if at least one component has not been added.
+     *
+     * @throws Exception
+     */
     public void run() throws Exception {
         if (runner == null) {
             throw new RunnerNotProvidedException("A Runner must be defined in order to start the execution.");
