@@ -28,7 +28,7 @@
 
     <groupId>com.github.jswf</groupId>
     <artifactId>framework</artifactId>
-    <version>1.0</version>
+    <version>0.0.1</version>
     <packaging>jar</packaging>
     <url>https://github.com/jswf/framework</url>
 
@@ -64,20 +64,5 @@
         <powermock.version>1.6.4</powermock.version>
         <mockito.version>1.10.19</mockito.version>
     </properties>
-
-    <dependencies>
-
-    </dependencies>
-
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
 
 </project>
