@@ -1,4 +1,4 @@
-package jswf.framework;
+package framework;
 
 /**
  * Basic implementation of a component.

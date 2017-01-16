@@ -1,4 +1,4 @@
-package jswf.framework;
+package framework;
 
 /**
  * Interface to define a framework component.

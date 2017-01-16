@@ -1,4 +1,4 @@
-package jswf.framework.exceptions;
+package framework.exceptions;
 
 public class FirstComponentNotProvidedException extends Exception {
 

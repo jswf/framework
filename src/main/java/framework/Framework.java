@@ -1,7 +1,7 @@
-package jswf.framework;
+package framework;
 
-import jswf.framework.exceptions.FirstComponentNotProvidedException;
-import jswf.framework.exceptions.RunnerNotProvidedException;
+import framework.exceptions.FirstComponentNotProvidedException;
+import framework.exceptions.RunnerNotProvidedException;
 
 import java.util.HashMap;
 
