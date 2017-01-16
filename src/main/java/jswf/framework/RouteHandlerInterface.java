@@ -1,4 +1,4 @@
-package framework;
+package jswf.framework;
 
 /**
  * A generic Route Handler interface.
