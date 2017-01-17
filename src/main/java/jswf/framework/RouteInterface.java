@@ -17,9 +17,9 @@ public interface RouteInterface {
 
     public RouteInterface setCompiledPath(Pattern compiledPath);
 
-    public RouteHandlerInterface getHandler();
+    public Class<?> getHandler();
 
-    public RouteInterface setHandler(RouteHandlerInterface handler);
+    public RouteInterface setHandler(Class<?> handler);
 
     public Matcher matcher(String path);
 

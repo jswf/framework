@@ -63,6 +63,23 @@ public class Framework {
     }
 
     /**
+     * Allows to add a components to the components and to the service list using one method
+     *
+     * @param component Component object
+     * @param addAsServiceToo Set to true to add the component to the services list
+     * @return this
+     */
+    public Framework addComponent(AbstractComponent component, boolean addAsServiceToo) {
+        addComponent(component);
+
+        if (addAsServiceToo) {
+            addService(component);
+        }
+
+        return this;
+    }
+
+    /**
      * Returns the first component in the pipeline.
      *
      * @return Returns an instance of ComponentInterface.
@@ -80,6 +97,22 @@ public class Framework {
      */
     public Framework addService(String id, Object service) {
         services.put(id, service);
+
+        return this;
+    }
+
+    /**
+     * Adds a service to the service list, the class name of the service will be used as unique identifier
+     *
+     * @param service Service object
+     * @return this
+     */
+    public Framework addService(Object service) {
+        if (service instanceof  ServiceInterface) {
+            services.put(((ServiceInterface) service).getServiceName(), service);
+        } else {
+            services.put(service.getClass().toString(), service);
+        }
 
         return this;
     }
