@@ -181,4 +181,13 @@ public class Environment {
         return exception;
     }
 
+    /**
+     * Returns true if the exception was previously set otherwise false
+     *
+     * @return true or false
+     */
+    public boolean hasException() {
+        return exception == null;
+    }
+
 }
