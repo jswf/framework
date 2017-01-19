@@ -123,6 +123,16 @@ public class Environment {
     }
 
     /**
+     * Compares if the passed status is the same as the current Environment status
+     *
+     * @param status Status value to compare with
+     * @return true if the status value is the same as the passed value
+     */
+    public boolean isStatus(String status) {
+        return this.status.equals(status);
+    }
+
+    /**
      * Sets the status of the environment.
      * Status holds a generic String value and could be used to indicate what is the current status of the Environment
      * in in the pipeline.
