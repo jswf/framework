@@ -17,6 +17,8 @@ public class Environment {
 
     Exception exception;
 
+    String status = "";
+
     HashMap<String, Object> customs;
 
     public Environment(HashMap<String, Object> services) {
@@ -108,6 +110,29 @@ public class Environment {
      */
     public HashMap<String, Object> getCustoms() {
         return customs;
+    }
+
+    /**
+     * Returns the status value of the Environment.
+     * Empty string should indicate it was never set.
+     *
+     * @return The current status.
+     */
+    public String getStatus() {
+        return status;
+    }
+
+    /**
+     * Sets the status of the environment.
+     * Status holds a generic String value and could be used to indicate what is the current status of the Environment
+     * in in the pipeline.
+     *
+     * @param status A generic string
+     */
+    public Environment setStatus(String status) {
+        this.status = status;
+
+        return this;
     }
 
     /**
