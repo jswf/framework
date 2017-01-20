@@ -187,7 +187,7 @@ public class Environment {
      * @return true or false
      */
     public boolean hasException() {
-        return exception == null;
+        return exception != null;
     }
 
 }
