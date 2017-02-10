@@ -96,6 +96,10 @@ public class Framework {
      * @return this
      */
     public Framework addService(String id, Object service) {
+        if (service instanceof ServiceInterface) {
+            ((ServiceInterface) service).setServices(services);
+        }
+
         services.put(id, service);
 
         return this;
@@ -108,7 +112,8 @@ public class Framework {
      * @return this
      */
     public Framework addService(Object service) {
-        if (service instanceof  ServiceInterface) {
+        if (service instanceof ServiceInterface) {
+            ((ServiceInterface) service).setServices(services);
             services.put(((ServiceInterface) service).getServiceName(), service);
         } else {
             services.put(service.getClass().toString(), service);
