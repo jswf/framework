@@ -3,24 +3,16 @@ package jswf.framework;
 import jswf.framework.exceptions.FirstComponentNotProvidedException;
 import jswf.framework.exceptions.RunnerNotProvidedException;
 
-import java.util.HashMap;
-
 /**
  * Framework class
  */
 public class Framework {
-
-    protected HashMap<String, Object> services;
 
     protected AbstractComponent firstComponent;
 
     protected AbstractComponent currentComponent;
 
     protected RunnerInterface runner;
-
-    public Framework(){
-        services = new HashMap<>();
-    }
 
     /**
      * Sets the runner to be run when the Framework starts.
@@ -63,18 +55,14 @@ public class Framework {
     }
 
     /**
-     * Allows to add a components to the components and to the service list using one method
+     * Add a component to the pipeline
      *
-     * @param component Component object
-     * @param addAsServiceToo Set to true to add the component to the services list
+     * @param component The component to be added
      * @return this
      */
-    public Framework addComponent(AbstractComponent component, boolean addAsServiceToo) {
+    public Framework addComponent(AbstractComponent component, boolean addAsService) {
         addComponent(component);
-
-        if (addAsServiceToo) {
-            addService(component);
-        }
+        ServicesContainer.addService((ServiceInterface) component);
 
         return this;
     }
@@ -86,59 +74,6 @@ public class Framework {
      */
     public AbstractComponent getComponentsPipeline() {
         return firstComponent;
-    }
-
-    /**
-     * Adds a service to the services list to be used latter from the components.
-     *
-     * @param id Id of the service
-     * @param service Service object
-     * @return this
-     */
-    public Framework addService(String id, Object service) {
-        if (service instanceof ServiceInterface) {
-            ((ServiceInterface) service).setServices(services);
-        }
-
-        services.put(id, service);
-
-        return this;
-    }
-
-    /**
-     * Adds a service to the service list, the class name of the service will be used as unique identifier
-     *
-     * @param service Service object
-     * @return this
-     */
-    public Framework addService(Object service) {
-        if (service instanceof ServiceInterface) {
-            ((ServiceInterface) service).setServices(services);
-            services.put(((ServiceInterface) service).getServiceName(), service);
-        } else {
-            services.put(service.getClass().toString(), service);
-        }
-
-        return this;
-    }
-
-    /**
-     * Returns a service by the id or null if it does not exist.
-     *
-     * @param id Service id to look for
-     * @return The service object
-     */
-    public Object getService(String id) {
-        return services.get(id);
-    }
-
-    /**
-     * The services list
-     *
-     * @return The services list
-     */
-    public HashMap<String, Object> getServices() {
-        return services;
     }
 
     /**
@@ -157,7 +92,7 @@ public class Framework {
             throw new FirstComponentNotProvidedException("At least one component must be provided in order to start the execution.");
         }
 
-        runner.run(firstComponent, services);
+        runner.run(firstComponent);
     }
 
 }

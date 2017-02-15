@@ -9,8 +9,6 @@ import java.util.HashMap;
  */
 public class Environment {
 
-    HashMap<String, Object> services;
-
     RequestInterface request;
 
     ResponseInterface response;
@@ -21,15 +19,14 @@ public class Environment {
 
     HashMap<String, Object> customs;
 
-    public Environment(HashMap<String, Object> services) {
-        this.services = services;
+    public Environment() {
         this.customs = new HashMap<>();
     }
 
     /**
      * Sets the request object into the Environment to be used latter by the components.
      *
-     * @param request Request object
+     * @param request HttpRequest object
      * @return this
      */
     public Environment setRequest(RequestInterface request) {
@@ -50,7 +47,7 @@ public class Environment {
     /**
      * Sets the response object into the Environment to be used latter by the components.
      *
-     * @param response Response object
+     * @param response HttpResponse object
      * @return this
      */
     public Environment setResponse(ResponseInterface response) {
@@ -144,21 +141,6 @@ public class Environment {
 
         return this;
     }
-
-    /**
-     * Returns the list of services declared in the Framework.
-     *
-     * @return A HashMap
-     */
-    public HashMap<String, Object> getServices() { return services; }
-
-    /**
-     * Returns a service by its id if it exists otherwise null.
-     *
-     * @param id Service id
-     * @return An Object
-     */
-    public Object getService(String id) { return services.get(id); }
 
     /**
      * Sets an exception in the Environment to notify the other components something happened in the pipeline.
