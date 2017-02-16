@@ -62,7 +62,9 @@ public class Framework {
      */
     public Framework addComponent(AbstractComponent component, boolean addAsService) {
         addComponent(component);
-        ServicesContainer.addService((ServiceInterface) component);
+        if (addAsService) {
+            ServicesContainer.addService((ServiceInterface) component);
+        }
 
         return this;
     }
