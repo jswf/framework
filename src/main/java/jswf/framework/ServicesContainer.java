@@ -1,6 +1,7 @@
 package jswf.framework;
 
-import java.util.IdentityHashMap;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Singleton instance to hold the list of services to be used by the application
@@ -9,10 +10,10 @@ public class ServicesContainer {
 
     static private ServicesContainer instance;
 
-    private IdentityHashMap<String, ServiceInterface> services;
+    private Map<String, ServiceInterface> services;
 
     private ServicesContainer() {
-        services = new IdentityHashMap<>();
+        services = new HashMap<>();
     }
 
     protected static ServicesContainer getInstance() {
@@ -35,9 +36,9 @@ public class ServicesContainer {
     /**
      * Returns the list of services
      *
-     * @return An IdentityHashMap holding the defined services
+     * @return An Map holding the defined services
      */
-    public static IdentityHashMap<String, ServiceInterface> getServices() {
+    public static Map<String, ServiceInterface> getServices() {
         return getInstance().services;
     }
 
@@ -63,6 +64,13 @@ public class ServicesContainer {
      */
     public static ServicesContainer addService(ServiceInterface service) {
         return getInstance().addService(service.getClass().getName(), service);
+    }
+
+    /**
+     * Removes all the current registered services
+     */
+    public static void removeAll() {
+        getInstance().services.clear();
     }
 
 }
