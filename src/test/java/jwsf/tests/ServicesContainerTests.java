@@ -1,9 +1,13 @@
+package jwsf.tests;
+
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 import jswf.framework.ServiceInterface;
 import jswf.framework.ServicesContainer;
+
+import java.util.Map;
 
 public class ServicesContainerTests {
 
@@ -39,6 +43,16 @@ public class ServicesContainerTests {
         DummyService dummyService = new DummyService();
         ServicesContainer.addService(dummyService);
         assertEquals(dummyService, ServicesContainer.getService(DummyService.class.getName()));
+    }
+
+    @Test
+    public void testAddingServicesAndGettingTheServiceCollection() {
+        assertNull(ServicesContainer.getService(DummyService.class.getName()));
+        DummyService dummyService = new DummyService();
+        ServicesContainer.addService(dummyService);
+        Map<String, ServiceInterface> services = ServicesContainer.getServices();
+        assertEquals(1, services.size());
+        assertTrue(services.containsValue(dummyService));
     }
 
 }

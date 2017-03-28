@@ -1,11 +1,12 @@
+package jwsf.tests;
+
 import jswf.framework.Environment;
 import jswf.framework.RequestInterface;
 import jswf.framework.ResponseInterface;
 
-import org.junit.Test;
-
 import java.util.HashMap;
 
+import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class EnvironmentTests {
