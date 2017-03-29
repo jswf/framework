@@ -1,11 +1,13 @@
 package jwsf.tests;
 
+import jwsf.tests.dummies.DummierService;
+import jwsf.tests.dummies.DummyService;
+import jswf.framework.ServiceInterface;
+import jswf.framework.ServicesContainer;
+
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
-
-import jswf.framework.ServiceInterface;
-import jswf.framework.ServicesContainer;
 
 import java.util.Map;
 
@@ -55,20 +57,4 @@ public class ServicesContainerTests {
         assertTrue(services.containsValue(dummyService));
     }
 
-}
-
-class DummyService implements ServiceInterface {
-
-    @Override
-    public String getServiceName() {
-        return DummyService.class.getName();
-    }
-}
-
-class DummierService  implements ServiceInterface {
-
-    @Override
-    public String getServiceName() {
-        return DummierService.class.getName();
-    }
 }

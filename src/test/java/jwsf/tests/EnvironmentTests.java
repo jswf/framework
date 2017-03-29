@@ -1,11 +1,10 @@
 package jwsf.tests;
 
 import jswf.framework.Environment;
-import jswf.framework.RequestInterface;
-import jswf.framework.ResponseInterface;
+import jwsf.tests.dummies.DummyRequest;
+import jwsf.tests.dummies.DummyResponse;
 
 import java.util.HashMap;
-
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -71,5 +70,3 @@ public class EnvironmentTests {
 
 }
 
-class DummyRequest implements RequestInterface {}
-class DummyResponse implements ResponseInterface {}
