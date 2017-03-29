@@ -6,9 +6,11 @@ import jswf.framework.RunnerInterface;
 
 public class DummyRunner implements RunnerInterface {
 
+    public Environment environment;
+
     @Override
     public void run(ComponentInterface firstComponent) throws Exception {
-        Environment environment = new Environment();
+        environment = new Environment();
 
         firstComponent.invoke(environment);
     }
