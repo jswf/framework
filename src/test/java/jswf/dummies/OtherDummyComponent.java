@@ -1,5 +1,4 @@
-package jwsf.tests.dummies;
-
+package jswf.dummies;
 
 import jswf.framework.AbstractComponent;
 import jswf.framework.Environment;

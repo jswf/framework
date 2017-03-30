@@ -1,4 +1,4 @@
-package jwsf.tests.dummies;
+package jswf.dummies;
 
 import jswf.framework.ResponseInterface;
 

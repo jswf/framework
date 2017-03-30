@@ -1,14 +1,14 @@
-package jwsf.tests;
+package jswf;
 
+import jswf.dummies.DummyRequest;
+import jswf.dummies.DummyResponse;
 import jswf.framework.Environment;
-import jwsf.tests.dummies.DummyRequest;
-import jwsf.tests.dummies.DummyResponse;
 
 import java.util.HashMap;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class EnvironmentTests {
+public class EnvironmentTest {
 
     @Test
     public void testCustomsAreInitialized() {

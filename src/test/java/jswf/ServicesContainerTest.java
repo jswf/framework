@@ -1,7 +1,7 @@
-package jwsf.tests;
+package jswf;
 
-import jwsf.tests.dummies.DummierService;
-import jwsf.tests.dummies.DummyService;
+import jswf.dummies.DummierService;
+import jswf.dummies.DummyService;
 import jswf.framework.ServiceInterface;
 import jswf.framework.ServicesContainer;
 
@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 
 import java.util.Map;
 
-public class ServicesContainerTests {
+public class ServicesContainerTest {
 
     @Before
     public void initialize() {

@@ -1,9 +1,9 @@
-package jwsf.tests;
+package jswf;
 
+import jswf.dummies.DummyComponent;
+import jswf.dummies.OtherDummyComponent;
 import jswf.framework.Environment;
 
-import jwsf.tests.dummies.DummyComponent;
-import jwsf.tests.dummies.OtherDummyComponent;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

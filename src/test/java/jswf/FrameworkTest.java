@@ -1,19 +1,18 @@
-package jwsf.tests;
+package jswf;
 
+import jswf.dummies.DummyComponent;
+import jswf.dummies.DummyComponentAndService;
+import jswf.dummies.DummyRunner;
+import jswf.dummies.OtherDummyComponent;
 import jswf.framework.Framework;
 import jswf.framework.ServicesContainer;
 import jswf.framework.exceptions.FirstComponentNotProvidedException;
 import jswf.framework.exceptions.RunnerNotProvidedException;
 
-import jwsf.tests.dummies.DummyComponent;
-import jwsf.tests.dummies.DummyComponentAndService;
-import jwsf.tests.dummies.DummyRunner;
-
-import jwsf.tests.dummies.OtherDummyComponent;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class FrameworkTests {
+public class FrameworkTest {
 
     @Test
     public void testSettingAndGettingTheRunnerInstance() {
@@ -84,6 +83,4 @@ public class FrameworkTests {
         assertEquals("foo", dummyRunner.environment.getCustom("bar"));
     }
 
-
 }
-
