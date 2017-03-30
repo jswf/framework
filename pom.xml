@@ -28,7 +28,7 @@
 
     <groupId>com.github.jswf</groupId>
     <artifactId>framework</artifactId>
-    <version>0.0.1</version>
+    <version>0.1.0</version>
     <packaging>jar</packaging>
     <url>https://github.com/jswf/framework</url>
 
